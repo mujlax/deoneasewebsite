@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/UI/Button";
 import { Card } from "@/components/UI/Card";
 import styles from "./Home.module.css";
@@ -49,10 +50,10 @@ export function HomePage() {
             поверхностях. Работаю в bono.digital в Ярославле.
           </p>
           <div className={styles.actions}>
-            <Button as="a" href="/news">
+            <Button as={Link} to="/news">
               Кейсы и заметки
             </Button>
-            <Button variant="ghost" as="a" href="/contacts">
+            <Button variant="ghost" as={Link} to="/contacts">
               Связаться
             </Button>
           </div>

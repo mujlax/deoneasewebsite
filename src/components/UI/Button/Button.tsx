@@ -3,6 +3,8 @@ import type {
   ButtonHTMLAttributes,
   PropsWithChildren,
 } from "react";
+import type { LinkProps } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./Button.module.css";
 
 type ButtonVariant = "primary" | "ghost";
@@ -26,7 +28,14 @@ type ButtonAsAnchor = PropsWithChildren<
     }
 >;
 
-type ButtonProps = ButtonAsButton | ButtonAsAnchor;
+type ButtonAsLink = PropsWithChildren<
+  CommonProps &
+    Omit<LinkProps, "className"> & {
+      as: typeof Link;
+    }
+>;
+
+type ButtonProps = ButtonAsButton | ButtonAsAnchor | ButtonAsLink;
 
 export function Button({
   variant = "primary",
@@ -45,6 +54,15 @@ export function Button({
       <a className={classes} {...anchorProps}>
         {children}
       </a>
+    );
+  }
+
+  if (as === Link) {
+    const linkProps = rest as Omit<LinkProps, "className">;
+    return (
+      <Link className={classes} {...linkProps}>
+        {children}
+      </Link>
     );
   }
 

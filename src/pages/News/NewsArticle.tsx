@@ -73,7 +73,7 @@ export function NewsArticlePage() {
           Мы не нашли публикацию с таким идентификатором. Возможно, она скоро
           появится.
         </p>
-        <Button as="a" href="/news" variant="ghost">
+        <Button as={Link} to="/news" variant="ghost">
           Вернуться к новостям
         </Button>
       </div>
@@ -91,7 +91,7 @@ export function NewsArticlePage() {
           <Link to="/news" className={styles.breadcrumb}>
             ← Назад к новостям
           </Link>
-          <Button variant="ghost" as="a" href={`/news/editor?slug=${slug}`}>
+          <Button variant="ghost" as={Link} to={`/news/editor?slug=${slug}`}>
             Редактировать
           </Button>
         </div>

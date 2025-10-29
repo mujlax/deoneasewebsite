@@ -35,7 +35,7 @@ export function NewsPage() {
           <h1>Новости</h1>
           <p>Подборка заметок о продуктах, дизайне и фронтенд-инженерии.</p>
         </div>
-        <Button as="a" href="/news/editor">
+        <Button as={Link} to="/news/editor">
           Создать запись
         </Button>
       </header>
