@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "title": "Тест298",
+    "description": "тестика",
+    "date": "2025-10-29",
+    "tags": "нормикс",
+    "coverAlt": "Нормально"
+  },
+  "blocks": [
+    {
+      "id": "33deb177-3af5-4084-8d41-9f64ac4e44ba",
+      "type": "paragraph",
+      "content": "тест"
+    },
+    {
+      "id": "8ddf3d07-8b43-4d11-9a7b-01ff52c0f2b4",
+      "type": "image",
+      "content": "тест тест тест 2",
+      "assetId": "96037faf-30bd-405d-bde8-5dde99f7c566"
+    },
+    {
+      "id": "00ce3fa6-b613-4724-a7bb-810d9c575928",
+      "type": "heading2",
+      "content": "Тестика жесктий"
+    },
+    {
+      "id": "4f675587-3b2a-4bbc-b81d-80e86f2f71a7",
+      "type": "paragraph",
+      "content": "Подзаголовок включает: Опыт (5+ лет) Используемые программы (After Effects, Blender, Adobe Animate, Unreal Engine, Marvelous Designer, Unity) Клиенты (Яндекс, Т2, Авито) Где можно увидеть работы (браузер, билборды, вывески в ТЦ, ВДНХ, музей Терешковой) Текущее место работы (bono.digital в Ярославле) Карточки-выделения обновлены: Анимация и моушен 3D и визуализация HTML баннеры Бейдж с опытом: изменен на \"5+ лет\" Meta теги: обновлены для SEO"
+    }
+  ],
+  "assets": [
+    {
+      "id": "eac5085d-1d3b-4c4d-8183-7f38a05eddb8",
+      "filename": "index-atlas-np-1.jpg",
+      "dataUrl": "/news-assets/2025-10-29-material/index-atlas-np-1.jpg",
+      "kind": "cover",
+      "alt": "Нормально"
+    },
+    {
+      "id": "96037faf-30bd-405d-bde8-5dde99f7c566",
+      "filename": "600x250-1.png",
+      "dataUrl": "/news-assets/2025-10-29-material/600x250-1.png",
+      "kind": "inline",
+      "alt": "тест т2"
+    }
+  ],
+  "generatedAt": "2025-10-29T20:45:59.424Z",
+  "version": 1
+}

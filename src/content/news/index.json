@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "2025-10-29-111344",
+    "title": "Тест111344",
+    "description": "тестика229",
+    "date": "2025-10-29",
+    "readingTime": 1,
+    "cover": "/news-assets/2025-10-29-material/index-atlas-np-1.jpg",
+    "coverAlt": "Нормально",
+    "tags": ["нормикс"]
+  },
+  {
+    "slug": "2025-10-29-298",
+    "title": "Тест298",
+    "description": "тестика",
+    "date": "2025-10-29",
+    "readingTime": 1,
+    "cover": "/news-assets/2025-10-29-298/index-atlas-np-1.jpg",
+    "coverAlt": "Нормально",
+    "tags": ["нормикс"]
+  },
+  {
+    "slug": "2025-10-29-material",
+    "title": "Тест",
+    "description": "тестика",
+    "date": "2025-10-29",
+    "readingTime": 1,
+    "cover": "/news-assets/2025-10-29-material/index-atlas-np-1.jpg",
+    "coverAlt": "Нормально",
+    "tags": ["нормикс"]
+  },
+  {
+    "slug": "2025-10-01-hello-world",
+    "title": "Привет, мир: старт личного портфолио",
+    "description": "Как я подружил дизайн, код и процессы в одном месте.",
+    "date": "2025-10-01",
+    "readingTime": 4,
+    "cover": "/news-assets/hello-world-cover.svg",
+    "coverAlt": "Абстрактный график в фирменных цветах",
+    "tags": ["process", "design", "frontend"]
+  }
+]

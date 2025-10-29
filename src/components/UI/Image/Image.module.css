@@ -1,0 +1,10 @@
+.image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  background: var(--color-border);
+}
+
+.rounded {
+  border-radius: var(--radius-md);
+}

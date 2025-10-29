@@ -1,0 +1,51 @@
+.card {
+  position: relative;
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-1);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  transition: border-color var(--transition-base);
+}
+
+.primary::before {
+  border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+}
+
+.secondary::before {
+  border-color: color-mix(in srgb, var(--color-accent-2) 40%, transparent);
+}
+
+.card > h3 {
+  font-size: var(--fs-lg);
+  line-height: var(--lh-tight);
+}
+
+.card > p {
+  color: var(--color-muted);
+  font-size: var(--fs-sm);
+}
+
+@media (max-width: var(--bp-md)) {
+  .card {
+    padding: var(--space-4);
+  }
+}
