@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -10,6 +11,28 @@ const navItems = [
 ];
 
 export function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  // Закрываем меню при изменении размера окна (переход с мобильного на десктоп)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <header className={styles.header}>
       <div className={styles.brand}>
@@ -26,13 +49,57 @@ export function Header() {
                 isActive ? `${styles.link} ${styles.active}` : styles.link
               }
               end={item.to === "/"}
+              onClick={closeMobileMenu}
             >
               {item.label}
             </NavLink>
           ))}
         </nav>
         <ThemeToggle />
+        <button
+          className={styles.mobileMenuButton}
+          onClick={toggleMobileMenu}
+          aria-label="Открыть меню"
+          aria-expanded={isMobileMenuOpen}
+        >
+          <span className={styles.hamburger}>
+            <span
+              className={`${styles.hamburgerLine} ${
+                isMobileMenuOpen ? styles.hamburgerLineOpen : ""
+              }`}
+            />
+            <span
+              className={`${styles.hamburgerLine} ${
+                isMobileMenuOpen ? styles.hamburgerLineOpen : ""
+              }`}
+            />
+            <span
+              className={`${styles.hamburgerLine} ${
+                isMobileMenuOpen ? styles.hamburgerLineOpen : ""
+              }`}
+            />
+          </span>
+        </button>
       </div>
+      {isMobileMenuOpen && (
+        <nav className={styles.mobileNav} aria-label="Мобильная навигация">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                isActive
+                  ? `${styles.mobileLink} ${styles.mobileLinkActive}`
+                  : styles.mobileLink
+              }
+              end={item.to === "/"}
+              onClick={closeMobileMenu}
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </nav>
+      )}
     </header>
   );
 }
