@@ -4,6 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { MDXProvider } from "@mdx-js/react";
 import { Button } from "@/components/UI/Button";
 import { Image } from "@/components/UI/Image";
+import { normalizePath } from "@/utils/path";
 import styles from "./NewsArticle.module.css";
 import newsIndex from "@/content/news/index.json";
 
@@ -129,7 +130,16 @@ export function NewsArticlePage() {
           </p>
         )}
         {!isLoading && !hasError && Content && (
-          <MDXProvider>
+          <MDXProvider
+            components={{
+              img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+                <img
+                  {...props}
+                  src={props.src ? normalizePath(props.src) : props.src}
+                />
+              ),
+            }}
+          >
             <Content />
           </MDXProvider>
         )}
